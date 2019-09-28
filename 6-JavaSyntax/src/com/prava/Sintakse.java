@@ -13,7 +13,6 @@ public class Sintakse {
 		/**
 		 * 1. Apibrėžti kintamuosius.
 		 */
-		
 		// byte - nuo -128 iki 127
 		byte myByte = -128;
 		
@@ -38,10 +37,16 @@ public class Sintakse {
 		// char
 		char myChar = 'C';
 		
+		
+		
+		
 		/**
 		 * 2. Atspausdinti kintamuosius komandinėje eilutėje.
 		 */
 		System.out.println(myByte + " " + myShort + " " + myInt + " " + myLong + " " + myFloat + " " + myDouble + " " + myBoolean + " " + myChar);
+		
+		
+		
 		
 		/**
 		 * 3. Įvykdyti veiksmus su kintamaisiais.
@@ -92,11 +97,13 @@ public class Sintakse {
 		System.out.print(naujaEilute);
 		System.out.println(raide);
 		
+		
+		
+		
 		/**
 		 * 4. Panaudoti objekto skaitinius ir
 		 * vietinius kintamuosius.
 		 */
-		
 		// Sukuriame klasės dviratis naujas instancijas.
 		Dviratis canondale = new Dviratis("Scalpel");
 		Dviratis cube = new Dviratis("Atention");
@@ -108,11 +115,17 @@ public class Sintakse {
 		System.out.println(cube.getModelis() + " " + cube.getPagaminta() + " " + cube.getPavaruSkaicius());
 		System.out.println(unibike.getModelis() + " " + unibike.getPagaminta() + " " + unibike.getPavaruSkaicius());
 		
+		
+		
+		
 		/**
 		 * 5. Panaudoti specialius simbolius String'e.
 		 */
 		System.out.println("\tŠiame String simbolyje pavaizduosiu specialis simbolius.\n"
 				+ "Tekstas iš naujos eilutės. \u03A9 - specialus simbolis. Vydūno \"Raštai\".");
+		
+		
+		
 		
 		/**
 		 * 6. Pademonstruoti įvairių tipų (ne tik matematinių)
@@ -123,6 +136,9 @@ public class Sintakse {
 		System.out.println("x = " + x);
 		boolean kazkas = true & (false | true) | !true;
 		System.out.println(kazkas);
+		
+		
+		
 		
 		/**
 		 * 7. Pademonstruoti, kaip kelių tipų kintamieji gali būti panaudoti viename reiškinyje.
