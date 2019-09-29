@@ -11,7 +11,7 @@ import java.util.Scanner;
  * 4) uses labeled-break and labeled-continue;
  * 5) uses return to give back value;
  * 6) has few logical methods;
- * 7) reads user input from console and sets data type;
+ * 7) reads user input from console and detects data type;
  * 8) demonstrates switch statement.
  *
  *
@@ -23,6 +23,8 @@ public class LogicAndAlgorithms {
         controlFlow();
         labeledBreakContinue();
         hello();
+        detectType();
+
     }
 
     /**
@@ -140,7 +142,7 @@ public class LogicAndAlgorithms {
     /**
      * 5) Uses return to give back value;
      * 6) has few logical methods;
-     * 7) reads user input from console and sets data type;
+     * 7) reads user input from console;
      * 8) demonstrates switch statement.
      * This is the main controller method which calls other methods
      * to fulfil its main purport.
@@ -162,8 +164,8 @@ public class LogicAndAlgorithms {
      */
     private static String read() {
         Scanner scanner = new Scanner(System.in);
-        String readFromConcole = scanner.nextLine().trim();
-        return readFromConcole;
+        String readFromConsole = scanner.nextLine();
+        return readFromConsole;
     }
 
     /**
@@ -190,5 +192,54 @@ public class LogicAndAlgorithms {
         }
         return "-1";
     }
+
+    /**
+     * 7. Detects data type. This method is designed to showcase
+     * the data type detection using scanner class.
+     */
+    private static void detectType() {
+        System.out.println("Enter something. I will tell you what data type it is ;)");
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.hasNextByte()) {
+            System.out.println("Data type is byte.");
+            return;
+        }
+       if (scanner.hasNextShort()) {
+           System.out.println("Data type is short.");
+           return;
+       }
+       if (scanner.hasNextInt()) {
+           System.out.println("Data type is int.");
+           return;
+       }
+       if (scanner.hasNextLine()) {
+           System.out.println("Data type is string.");
+           return;
+       }
+       if (scanner.hasNextFloat()) {
+           System.out.println("Data type is float.");
+           return;
+       }
+       if (scanner.hasNextDouble()) {
+           System.out.println("Data type is double.");
+           return;
+       }
+       if (scanner.hasNextLong()) {
+           System.out.println("Data type is long.");
+           return;
+       }
+       if (scanner.hasNextBoolean()) {
+           System.out.println("Data type is boolean.");
+           return;
+       }
+       if (scanner.hasNextBigInteger()) {
+           System.out.println("Data type is boolean.");
+           return;
+       }
+       if (scanner.hasNextBigDecimal()) {
+           System.out.println("Data type is boolean.");
+           return;
+       }
+   }
 
 }
