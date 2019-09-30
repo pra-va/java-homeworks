@@ -233,11 +233,11 @@ public class LogicAndAlgorithms {
            return;
        }
        if (scanner.hasNextBigInteger()) {
-           System.out.println("Data type is boolean.");
+           System.out.println("Data type is Big Integer.");
            return;
        }
        if (scanner.hasNextBigDecimal()) {
-           System.out.println("Data type is boolean.");
+           System.out.println("Data type is Decimal.");
            return;
        }
    }
