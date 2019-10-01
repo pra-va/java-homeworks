@@ -3,12 +3,9 @@ package lt.prava;
 import java.util.Scanner;
 
 /**
- * Calculator program which:
- * 1) does arithmetical operations;
- * 2) does number squaring, raising to the power of n, rooting;
- * 3) has trigonometry functionality;
- * 4) can calculate percentage;
- * 5) can calculate remainder.
+ * Calculator program which: 1) does arithmetical operations; 2) does number
+ * squaring, raising to the power of n, rooting; 3) has trigonometry
+ * functionality; 4) can calculate percentage; 5) can calculate remainder.
  * 
  * @author Pranas Varaneckas
  *
@@ -20,10 +17,10 @@ public class Skaiciuotuvas {
 	}
 
 	/**
-	 * This is the main method responsible for running calculator program.
-	 * In order to properly function it uses while loop. While variable runTheApp
-	 * is true, the application will be running. As soon as this variable will
-	 * become false - the application will be terminated.
+	 * This is the main method responsible for running calculator program. In order
+	 * to properly function it uses while loop. While variable runTheApp is true,
+	 * the application will be running. As soon as this variable will become false -
+	 * the application will be terminated.
 	 */
 	private static void run() {
 		boolean runTheApp = true;
@@ -32,32 +29,32 @@ public class Skaiciuotuvas {
 			System.out.println("Enter Your choice to continue:");
 			String choice = readFromConcole();
 			switch (choice) {
-				case "1":
-					arithmeticOperation();
-					break;
+			case "1":
+				arithmeticOperation();
+				break;
 
-				case "2":
-					squarePowerRoot();
-					break;
+			case "2":
+				squarePowerRoot();
+				break;
 
-				case "3":
-					trigonometry();
-					break;
+			case "3":
+				trigonometry();
+				break;
 
-				case "4":
-					calculatePercentage();
-					break;
+			case "4":
+				calculatePercentage();
+				break;
 
-				case "5":
-					calculateRemainder();
-					break;
+			case "5":
+				calculateRemainder();
+				break;
 
-				case "6":
-					welcomeRead();
-					break;
+			case "6":
+				welcomeRead();
+				break;
 
-				case "7":
-					runTheApp = false;
+			case "7":
+				runTheApp = false;
 
 			}
 		}
@@ -98,8 +95,8 @@ public class Skaiciuotuvas {
 		double number = 0.0;
 		while (true) {
 			whichFunction = readFromConcole();
-			if (!whichFunction.equals("sin") && !whichFunction.equals("cos") &&
-				!whichFunction.equals("tg") && !whichFunction.equals("ctg")) {
+			if (!whichFunction.equals("sin") && !whichFunction.equals("cos") && !whichFunction.equals("tg")
+					&& !whichFunction.equals("ctg")) {
 				System.out.println("I did not understand that. Please try to enter funcion one more time.");
 				continue;
 			}
@@ -107,58 +104,55 @@ public class Skaiciuotuvas {
 			number = readAndParseNumber("Enter desired number: ");
 
 			switch (whichFunction) {
-				case "sin":
-					System.out.println("Answer: " + round(BasicOperations.sin(number)));
-					return;
-				case "cos":
-					System.out.println("Answer: " + round(BasicOperations.cos(number)));
-					return;
-				case "tg":
-					System.out.println("Answer: " + round(BasicOperations.tan(number)));
-					return;
-				case "ctg":
-					System.out.println("Answer: " + round(BasicOperations.ctg(number)));
-					return;
+			case "sin":
+				System.out.println("Answer: " + round(BasicOperations.sin(number)));
+				return;
+			case "cos":
+				System.out.println("Answer: " + round(BasicOperations.cos(number)));
+				return;
+			case "tg":
+				System.out.println("Answer: " + round(BasicOperations.tan(number)));
+				return;
+			case "ctg":
+				System.out.println("Answer: " + round(BasicOperations.ctg(number)));
+				return;
 			}
 		}
 	}
 
 	/**
-	 * This method will deal with squaring, increasing to power and rooting
-	 * the number.
+	 * This method will deal with squaring, increasing to power and rooting the
+	 * number.
 	 */
 	private static void squarePowerRoot() {
 		String choice = "";
 		double number = 0.0;
 		while (true) {
-			System.out.println("2. Enter:\n" +
-					"1 - to square number;\n" +
-					"2 - to raise number to a power of another number;\n" +
-					"3 - to root the number.");
+			System.out.println("2. Enter:\n" + "1 - to square number;\n"
+					+ "2 - to raise number to a power of another number;\n" + "3 - to root the number.");
 			choice = readFromConcole();
 			switch (choice) {
-				case "1":
-					number = readAndParseNumber("Enter number to square:");
-					System.out.println("Answer: " + round(BasicOperations.square(number)));
-					return;
-				case "2":
-					number = readAndParseNumber("Enter main number to raise to power:");
-					System.out.println("Raise to power of:");
-					double power = readAndParseNumber("Enter power to raise the number " + number + ":");
-					System.out.println("Answer: " + round(BasicOperations.raiseToPower(number, power)));
-					return;
-				case "3":
-					number = readAndParseNumber("Enter number to root:");
-					System.out.println("Answer: " + round(BasicOperations.sqrt(number)));
-					return;
+			case "1":
+				number = readAndParseNumber("Enter number to square:");
+				System.out.println("Answer: " + round(BasicOperations.square(number)));
+				return;
+			case "2":
+				number = readAndParseNumber("Enter main number to raise to power:");
+				System.out.println("Raise to power of:");
+				double power = readAndParseNumber("Enter power to raise the number " + number + ":");
+				System.out.println("Answer: " + round(BasicOperations.raiseToPower(number, power)));
+				return;
+			case "3":
+				number = readAndParseNumber("Enter number to root:");
+				System.out.println("Answer: " + round(BasicOperations.sqrt(number)));
+				return;
 			}
 			System.out.println("I did not understand that :( Can you repeat it?");
 		}
 	}
 
 	/**
-	 * This is controller method for arithmetic operations like:
-	 * +, -, *, /.
+	 * This is controller method for arithmetic operations like: +, -, *, /.
 	 */
 	private static void arithmeticOperation() {
 		System.out.println("1. Arithmetic Calculator.");
@@ -167,31 +161,32 @@ public class Skaiciuotuvas {
 		double secondNumber = readAndParseNumber("Enter second number:");
 
 		switch (operator) {
-			case "/":
-				if (secondNumber == 0) {
-					System.out.println("You are not allowed to divide by 0!!!");
-					return;
-				}
-				System.out.println("Answer:" + round(BasicOperations.divide(firstNumber, secondNumber)));
+		case "/":
+			if (secondNumber == 0) {
+				System.out.println("You are not allowed to divide by 0!!!");
 				return;
-			case "*":
-				System.out.println("Answer:" + round(BasicOperations.multiply(firstNumber, secondNumber)));
-				return;
-			case "-":
-				System.out.println("Answer:" + round(BasicOperations.substract(firstNumber, secondNumber)));
-				return;
-			case "+":
-				System.out.println("Answer:" + round(BasicOperations.add(firstNumber, secondNumber)));
-				return;
+			}
+			System.out.println("Answer:" + round(BasicOperations.divide(firstNumber, secondNumber)));
+			return;
+		case "*":
+			System.out.println("Answer:" + round(BasicOperations.multiply(firstNumber, secondNumber)));
+			return;
+		case "-":
+			System.out.println("Answer:" + round(BasicOperations.substract(firstNumber, secondNumber)));
+			return;
+		case "+":
+			System.out.println("Answer:" + round(BasicOperations.add(firstNumber, secondNumber)));
+			return;
 		}
 	}
 
 	/**
-	 * This method will read one single user entered number from console and will try to
-	 * parse it as double. If user would enter number in bad format, exception will be handled
-	 * accordingly. If the number will overflow double capacity, instead of processing further
-	 * (parsing) "Infinity or "NaN", it will prompt user that calculator can not accept number
-	 * that high. It will also provide prompts for user interaction.
+	 * This method will read one single user entered number from console and will
+	 * try to parse it as double. If user would enter number in bad format,
+	 * exception will be handled accordingly. If the number will overflow double
+	 * capacity, instead of processing further (parsing) "Infinity or "NaN", it will
+	 * prompt user that calculator can not accept number that high. It will also
+	 * provide prompts for user interaction.
 	 *
 	 * @param message will accept String parameter to prompt user with a message.
 	 * @return double format number that has been red and parsed.
@@ -217,7 +212,8 @@ public class Skaiciuotuvas {
 	}
 
 	/**
-	 * This method will read operator. It will also provide prompts for user interaction.
+	 * This method will read operator. It will also provide prompts for user
+	 * interaction.
 	 *
 	 * @return Operator in String format.
 	 */
@@ -226,8 +222,7 @@ public class Skaiciuotuvas {
 		String operator = "";
 		while (true) {
 			operator = readFromConcole();
-			if (operator.equals("/") || operator.equals("*") ||
-				operator.equals("-") || operator.equals("+")) {
+			if (operator.equals("/") || operator.equals("*") || operator.equals("-") || operator.equals("+")) {
 				return operator;
 			} else {
 				System.out.println("I do not know this operator :( Please try entering it one more time:");
@@ -240,19 +235,15 @@ public class Skaiciuotuvas {
 	 * This method will print greeting message in the console.
 	 */
 	private static void welcomeRead() {
-		System.out.println("Functionality:\n" +
-				"1 - arithmetic operation;\n" +
-				"2 - squaring, raising a number to a power of n, root;\n" +
-				"3 - trigonometry;\n" +
-				"4 - calculate percentage;\n" +
-				"5 - calculate remainder;\n" +
-				"6 - repeat commands;\n" +
-				"7 - quit.");
+		System.out.println("Functionality:\n" + "1 - arithmetic operation;\n"
+				+ "2 - squaring, raising a number to a power of n, root;\n" + "3 - trigonometry;\n"
+				+ "4 - calculate percentage;\n" + "5 - calculate remainder;\n" + "6 - repeat commands;\n"
+				+ "7 - quit.");
 	}
 
 	/**
-	 * This method is responsible for reading user input.
-	 * It will also trim spaces and will convert it to lower case.
+	 * This method is responsible for reading user input. It will also trim spaces
+	 * and will convert it to lower case.
 	 * 
 	 * @return User input in String format
 	 */
@@ -264,9 +255,9 @@ public class Skaiciuotuvas {
 	}
 
 	/**
-	 * This method will round number to 4 decimal places. Also this method will check
-	 * if the number passed is infinity or not a number. In that case, it will throw
-	 * warning to a user.
+	 * This method will round number to 4 decimal places. Also this method will
+	 * check if the number passed is infinity or not a number. In that case, it will
+	 * throw warning to a user.
 	 *
 	 * @param value - Value to round to 4 decimal places.
 	 * @return Rounded to 4 decimal places double format number.
