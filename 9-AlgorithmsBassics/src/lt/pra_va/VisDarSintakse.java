@@ -238,6 +238,9 @@ public class VisDarSintakse {
 		}
 	}
 
+	/**
+	 * 10) prints multiplication table to console from 1 to 100.
+	 */
 	private static void printMultiplicationTable() {
 		for (int i = 1; i < 101; i++) {
 			for (int j = 1; j < 101; j++) {
