@@ -22,8 +22,8 @@ public class Algorithms {
 //		createAndSortArray();
 //		fibonachiSequance();
 //		findTwoLargestAndAverageThem();
-//		createAndSortStringArray();
-		quickSortArray();
+		createAndSortStringArray();
+//		quickSortArray();
 
 	}
 
@@ -148,8 +148,6 @@ public class Algorithms {
 		while (numberOfSwaps > 0) {
 			numberOfSwaps = 0;
 			for (int i = 0, j = 1; j < names.length; i++, j++) {
-
-				System.out.println("restart for loop");
 				// 1) find the shorter comparable member length.
 				int shorterLenght = 0;
 				if (names[i].length() > names[j].length()) {
@@ -159,19 +157,13 @@ public class Algorithms {
 				}
 				// 2) compare their char values in lower case.
 				for (int k = 0; k < shorterLenght; k++) {
-					System.out.println("k = " + k);
 					int firstMemberChar = names[i].toLowerCase().charAt(k);
-					System.out.println("first member char: " + firstMemberChar);
 					int secondMemberChar = names[j].toLowerCase().charAt(k);
-					System.out.println("second member char: " + secondMemberChar);
 					if (firstMemberChar == secondMemberChar) {
-						System.out.println("continue with loop");
 						continue;
 					} else if (firstMemberChar < secondMemberChar) {
-						System.out.println("break");
 						break;
 					} else if (firstMemberChar > secondMemberChar) {
-						System.out.println("switch members");
 						String temp = names[j];
 						names[j] = names[i];
 						names[i] = temp;
