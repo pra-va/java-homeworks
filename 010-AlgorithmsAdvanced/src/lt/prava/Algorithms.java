@@ -17,8 +17,9 @@ import java.util.Random;
  *
  */
 
-// Bubble sort - 3.
-// Insertion sort - 1.
+// Bubble sort - part 3.
+// Insertion sort - part 1.
+// Quick sort - part 4.
 public class Algorithms {
 
 	public static void main(String[] args) {
@@ -214,26 +215,41 @@ public class Algorithms {
 	 */
 	private static void quickSort(long[] longArray, int start, int end) {
 		if (start < end) {
+			/**
+			 * Partition - sort elements so that higher than pivot elements would be on the
+			 * right and lower - on the left.
+			 */
 			int partition = partitionThis(longArray, start, end);
 
 			quickSort(longArray, start, partition - 1);
 			quickSort(longArray, partition + 1, end);
-
 		}
 	}
 
+	/**
+	 * Partition method to organize the array. Firstly we pick a pivot value (last
+	 * element). Then we organize the array so that values greater than pivot value
+	 * would be on the right and values lesser than a pivot value would be on the
+	 * left. We return pivot position and restart sort and partition methods
+	 * recursively.
+	 * 
+	 * @param longArray
+	 * @param start
+	 * @param end
+	 * @return
+	 */
 	private static int partitionThis(long[] longArray, int start, int end) {
 		long pivot = longArray[end];
 		int iterator = start - 1;
 		for (int i = start; i < end; i++) {
-			if (longArray[i] <= pivot) { // sukeisti array[iterator] su array[i]
+			if (longArray[i] <= pivot) { // Swap array[iterator] with array[i]
 				iterator++;
 				long tmp = longArray[i];
 				longArray[i] = longArray[iterator];
 				longArray[iterator] = tmp;
 			}
 		}
-		// sukeisti array[iterator + 1] su array[end]
+		// Swap array[iterator + 1] with array[end]
 		long tmp = longArray[iterator + 1];
 		longArray[iterator + 1] = longArray[end];
 		longArray[end] = tmp;
