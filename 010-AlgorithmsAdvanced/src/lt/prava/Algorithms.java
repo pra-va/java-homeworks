@@ -16,20 +16,24 @@ import java.util.Random;
  * @author pra-va
  *
  */
+
+// Bubble sort - 3.
+// Insertion sort - 1.
 public class Algorithms {
 
 	public static void main(String[] args) {
 //		createAndSortArray();
 //		fibonachiSequance();
 //		findTwoLargestAndAverageThem();
-		createAndSortStringArray();
-//		quickSortArray();
-
+//		createAndSortStringArray();
+		quickSortArray();
 	}
 
 	/**
 	 * 1) create array of 100 elements with Random class or Math.random method and
 	 * sort it.
+	 * 
+	 * The int list is sorted using insertion sorting algorithm.
 	 */
 	private static void createAndSortArray() {
 		int[] intArray = new int[100];
@@ -37,8 +41,22 @@ public class Algorithms {
 		for (int i = 0; i < intArray.length; i++) {
 			intArray[i] = ranodm.nextInt(1000);
 		}
-		Arrays.sort(intArray);
-		System.out.println(Arrays.toString(intArray));
+		System.out.println("Not sorted array: " + Arrays.toString(intArray));
+		intArray = insertionSort(intArray);
+		System.out.println("Sorted array: " + Arrays.toString(intArray));
+	}
+
+	private static int[] insertionSort(int[] intArray) {
+		for (int i = 1; i < intArray.length; i++) {
+			int tempValue = intArray[i];
+			int iterator = i - 1;
+			while (iterator >= 0 && intArray[iterator] > tempValue) { // ????
+				intArray[iterator + 1] = intArray[iterator];
+				intArray[iterator] = tempValue;
+				iterator--;
+			}
+		}
+		return intArray;
 	}
 
 	/**
@@ -143,7 +161,7 @@ public class Algorithms {
 		// First and easy method to sort array.
 //		Arrays.sort(names); 
 
-		// My written sort algorithm.
+		// My written bubble sort algorithm for names array.
 		int numberOfSwaps = 1;
 		while (numberOfSwaps > 0) {
 			numberOfSwaps = 0;
@@ -170,7 +188,6 @@ public class Algorithms {
 						numberOfSwaps++;
 						break;
 					}
-
 				}
 			}
 		}
@@ -178,16 +195,48 @@ public class Algorithms {
 	}
 
 	/**
-	 * 4) program, using quick sort algorithm for array with 50k members. Also, this
+	 * 4) program, using quickSort algorithm for array with 50k members. Also, this
 	 * method is using earlier created fillArray(longArray) method.
 	 */
 	private static void quickSortArray() {
 		long[] longArray = new long[50000];
-		longArray = fillArray(longArray);
-		Arrays.sort(longArray);
-		for (long item : longArray) {
-			System.out.println(item);
+		fillArray(longArray);
+		quickSort(longArray, 0, longArray.length - 1);
+		for (int i = 0; i < longArray.length; i++) {
+			System.out.println(longArray[i]);
 		}
 	}
 
+	/**
+	 * Recursive quick sort initialization.
+	 * 
+	 * @param longArray
+	 */
+	private static void quickSort(long[] longArray, int start, int end) {
+		if (start < end) {
+			int partition = partitionThis(longArray, start, end);
+
+			quickSort(longArray, start, partition - 1);
+			quickSort(longArray, partition + 1, end);
+
+		}
+	}
+
+	private static int partitionThis(long[] longArray, int start, int end) {
+		long pivot = longArray[end];
+		int iterator = start - 1;
+		for (int i = start; i < end; i++) {
+			if (longArray[i] <= pivot) { // sukeisti array[iterator] su array[i]
+				iterator++;
+				long tmp = longArray[i];
+				longArray[i] = longArray[iterator];
+				longArray[iterator] = tmp;
+			}
+		}
+		// sukeisti array[iterator + 1] su array[end]
+		long tmp = longArray[iterator + 1];
+		longArray[iterator + 1] = longArray[end];
+		longArray[end] = tmp;
+		return iterator + 1;
+	}
 }
