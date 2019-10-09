@@ -120,10 +120,10 @@ public class VisDarSintakse {
 		System.out.println("Enter parameter c of ax2 + bx + c = 0:");
 		double c = scanner.nextDouble();
 		System.out.println("You entered " + a + "x^2 + " + b + "x + " + c + " = 0");
-		// Check if a > 0. If true - calculate discriminant. Else print
+		// Check if a != 0. If true - calculate discriminant. Else print
 		// warning and return out from the method.
 		double discriminant = -1;
-		if (a > 0) {
+		if (a != 0) {
 			discriminant = Math.round((b * b - 4 * a * c) * 100.0) / 100.0;
 		} else {
 			System.out.println("Parameter a in quadratic polynomial must be larger than zero.");

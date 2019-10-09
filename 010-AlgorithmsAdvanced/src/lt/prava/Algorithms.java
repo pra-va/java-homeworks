@@ -23,11 +23,11 @@ import java.util.Random;
 public class Algorithms {
 
 	public static void main(String[] args) {
-//		createAndSortArray();
+		createAndSortArray();
 //		fibonachiSequance();
 //		findTwoLargestAndAverageThem();
 //		createAndSortStringArray();
-		quickSortArray();
+//		quickSortArray();
 	}
 
 	/**
@@ -51,10 +51,14 @@ public class Algorithms {
 		for (int i = 1; i < intArray.length; i++) {
 			int tempValue = intArray[i];
 			int iterator = i - 1;
-			while (iterator >= 0 && intArray[iterator] > tempValue) { // ????
-				intArray[iterator + 1] = intArray[iterator];
-				intArray[iterator] = tempValue;
-				iterator--;
+			for (int j = i; j > 0; j--) {
+				if (intArray[iterator] > tempValue) {
+					intArray[iterator + 1] = intArray[iterator];
+					intArray[iterator] = tempValue;
+					iterator--;
+				} else {
+					break;
+				}
 			}
 		}
 		return intArray;
