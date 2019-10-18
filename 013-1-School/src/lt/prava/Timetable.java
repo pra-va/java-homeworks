@@ -1,5 +1,12 @@
 package lt.prava;
 
+/**
+ * Timetable class. You should not create this class!!! It is auto created by
+ * other classes that need this class.
+ * 
+ * @author pra-va
+ *
+ */
 public class Timetable {
 	private Subject[][] subjects; // [Week day] [Subject]
 
@@ -34,6 +41,15 @@ public class Timetable {
 		}
 	}
 
+	/**
+	 * 
+	 * This method will remove timetable node from both - teacher and school class
+	 * objects.
+	 * 
+	 * @param day
+	 * @param lesson
+	 * @param teacher
+	 */
 	public void removeTimeTableNode(int day, int lesson, Teacher teacher) {
 		teacher.getTimetable()[day - 1][lesson - 1] = null;
 		this.subjects[day - 1][lesson - 1] = new Subject("Empty");
@@ -44,6 +60,9 @@ public class Timetable {
 		return subjects;
 	}
 
+	/**
+	 * This method will print formated timetable for school class object.
+	 */
 	public void print() {
 		System.out.printf("%2s %20s %20s %20s %20s %20s", " ", "Pirmadienis", "Antradienis", "Treciadienis",
 				"Ketvirtadienis", "Penktadienis");

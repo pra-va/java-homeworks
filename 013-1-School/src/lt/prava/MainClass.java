@@ -1,5 +1,18 @@
 package lt.prava;
 
+/**
+ * Main application for school program. Firstly, student objects must be
+ * created. Then, school class. Then, students can be added to school class.
+ * While school class constructor is creating school class, it will also create
+ * timetable object. This object has subject class array that is going to be
+ * filled with empty Subjects. Time table object also has methods to create new
+ * timetable node object which will check if school class or teacher is not busy
+ * at that time where new node should be created and only then will create new
+ * node for both - teacher and student classes.
+ * 
+ * @author pra-va
+ *
+ */
 public class MainClass {
 	public static void main(String[] args) {
 		Student studentOne = new Student("Pranas Pranaitis", 14);

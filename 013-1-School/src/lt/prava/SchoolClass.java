@@ -1,5 +1,12 @@
 package lt.prava;
 
+/**
+ * School class is used to store and manipulate students that are in this class,
+ * their timetable, and class name.
+ * 
+ * @author pra-va
+ *
+ */
 public class SchoolClass {
 	private Student[] students;
 	private String className;

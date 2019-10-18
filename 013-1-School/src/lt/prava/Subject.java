@@ -1,5 +1,11 @@
 package lt.prava;
 
+/**
+ * Simple class to create subject objects.
+ * 
+ * @author pra-va
+ *
+ */
 public class Subject {
 	private String name;
 
